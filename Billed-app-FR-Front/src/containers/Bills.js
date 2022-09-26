@@ -27,13 +27,21 @@ export default class {
     $('#modaleFile').modal('show')
   }
 
+
+  //*************** [BUG report] - Bills 1*******************/
+  
+
   getBills = () => {
     if (this.store) {
       return this.store
       .bills()
       .list()
       .then(snapshot => {
-        const bills = snapshot
+        // const bills = snapshot
+        // console.log(snapshot)
+        // pas demandé mais pour l'affichage trié en plus de la vue dans BillsUI
+        const bills = snapshot.sort((a, b) => new Date(b.date) - new Date(a.date))
+
           .map(doc => {
             try {
               return {
@@ -52,7 +60,8 @@ export default class {
               }
             }
           })
-          console.log('length', bills.length)
+
+
         return bills
       })
     }

@@ -26,7 +26,7 @@ export default class Login {
     this.localStorage.setItem("user", JSON.stringify(user))
     this.login(user)
       .catch(
-        (err) => {this.createUser(user); console.log("USER EMPLOYEE: ", user, err)}
+        (err) => this.createUser(user)
       )
       .then(() => {
         this.onNavigate(ROUTES_PATH['Bills'])
@@ -36,6 +36,8 @@ export default class Login {
       })
 
   }
+
+    //*************** [BUG report] - login*******************/
 
   handleSubmitAdmin = e => {
     e.preventDefault()
@@ -48,7 +50,7 @@ export default class Login {
     this.localStorage.setItem("user", JSON.stringify(user))
     this.login(user)
       .catch(
-        (err) => {this.createUser(user); console.log("USER ADMIN: ", user, err)}
+        (err) => this.createUser(user)
       )
       .then(() => {
         this.onNavigate(ROUTES_PATH['Dashboard'])
@@ -59,6 +61,8 @@ export default class Login {
   }
 
   // not need to cover this function by tests
+    /* istanbul ignore next */
+
   login = (user) => {
     if (this.store) {
       return this.store
@@ -74,6 +78,9 @@ export default class Login {
   }
 
   // not need to cover this function by tests
+  /* istanbul ignore next */
+
+
   createUser = (user) => {
     if (this.store) {
       return this.store

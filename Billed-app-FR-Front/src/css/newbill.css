@@ -48,6 +48,18 @@ label {
   margin-top: 50px;
 }
 
+#btn-cancel-bill {
+  width: 100px;
+  background-color: white;
+  color: #0E5AE5;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.2px;
+  margin-top: 50px;
+}
+
 textarea, input, select {
   color: #0E5AE5 !important;
   opacity: 0.7 !important;

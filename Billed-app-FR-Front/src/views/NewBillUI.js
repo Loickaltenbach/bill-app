@@ -55,14 +55,16 @@ export default () => {
                   </div>
                   <div class="col-half">
                     <label for="file" class="bold-label">Justificatif</label>
-                    <input required type="file" class="form-control blue-border" data-testid="file" />
+                    <input required type="file" class="form-control blue-border" id='file-PJ' data-testid="file" />
                   </div>
+                    <p data-testid="bad-proof-format" class="bad-proof-format" style='display:none;color:red;text-align:center'>Mauvais format de justificatif - utiliser jpg, jpeg ou png</p>
                 </div>
             </div>
             <div class="row">
               <div class="col-md-6">
                 <div class="col-half">
                   <button type="submit" id='btn-send-bill' class="btn btn-primary">Envoyer</button>
+                  <button id='btn-cancel-bill' class="btn btn-primary">Annuler</button>
                 </div>
               </div>
             </div>
