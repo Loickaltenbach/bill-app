@@ -64,7 +64,6 @@ export default () => {
               <div class="col-md-6">
                 <div class="col-half">
                   <button type="submit" id='btn-send-bill' class="btn btn-primary">Envoyer</button>
-                  <button id='btn-cancel-bill' class="btn btn-primary">Annuler</button>
                 </div>
               </div>
             </div>

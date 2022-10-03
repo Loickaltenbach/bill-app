@@ -64,29 +64,31 @@ export default (bill) => {
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm">
-          <label for="file" class="bold-label">Justificatif</label>
-            <div class='input-field input-flex file-flex'>
-            <span id="file-name-admin">${bill.fileName}</span>
-            <div class='icons-container'>
-              <span id="icon-eye-d" data-testid="icon-eye-d" data-bill-url="${bill.fileUrl}"> ${eyeWhite} </span>
+      ${bill.fileName !== "null" ? (`
+        <div class="row">
+          <div class="col-sm">
+            <label for="file" class="bold-label">Justificatif</label>
+              <div class='input-field input-flex file-flex'>
+              <span id="file-name-admin">${bill.fileName}</span>
+              <div class='icons-container'>
+                <span id="icon-eye-d" data-testid="icon-eye-d" data-bill-url="${bill.fileUrl}"> ${eyeWhite} </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      `) : (`<div class="row"></div>`)}
       <div class="row">
        ${bill.status === 'pending' ? (`
         <div class="col-sm">
           <label for="commentary-admin" class="bold-label">Ajouter un commentaire</label>
           <textarea id="commentary2" class="form-control blue-border" data-testid="commentary2" rows="5"></textarea>
         </div>
-       `) : (`
+       `) : bill.commentAdmin === "null" ? (`
         <div class="col-sm">
           <label for="commentary-admin" class="bold-label">Votre commentaire</label>
           <div class='input-field'> ${bill.commentAdmin} </div>
         </div>
-       `)}
+       `) : (`<div class="col-sm"></div>`)}
       </div>
       <div class="row">
       ${bill.status === 'pending' ? (`
