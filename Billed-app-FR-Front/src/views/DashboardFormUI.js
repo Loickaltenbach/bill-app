@@ -83,12 +83,12 @@ export default (bill) => {
           <label for="commentary-admin" class="bold-label">Ajouter un commentaire</label>
           <textarea id="commentary2" class="form-control blue-border" data-testid="commentary2" rows="5"></textarea>
         </div>
-       `) : bill.commentAdmin === "null" ? (`
+       `) : bill.commentAdmin ? (`
         <div class="col-sm">
           <label for="commentary-admin" class="bold-label">Votre commentaire</label>
           <div class='input-field'> ${bill.commentAdmin} </div>
         </div>
-       `) : (`<div class="col-sm"></div>`)}
+       `) : (`<div class="row"></div>`)}
       </div>
       <div class="row">
       ${bill.status === 'pending' ? (`
